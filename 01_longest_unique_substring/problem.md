@@ -4,21 +4,23 @@ Given a string, find the length of the longest contiguous substring that has no 
 
 A substring is contiguous — `abc` is a substring of `abcabcbb`, but `acb` is not.
 
-## Input
+## Function
 
-A single line on stdin: the string to check. It may be empty.
+Implement in `solution.cpp`:
 
-## Output
+```cpp
+int count(std::string key);
+```
 
-A single integer on stdout: the length of the longest substring with no repeated characters.
+Returns the length of the longest substring of `key` with no repeated characters.
 
 ## Examples
 
-| Input | Output |
+| `key` | Output |
 | --- | --- |
 | `abcabcbb` | `3` |
 | `bbbbb` | `1` |
 | `pwwkew` | `3` |
-| (empty) | `0` |
+| (empty string) | `0` |
 | `dvdf` | `3` |
 | `abba` | `2` |

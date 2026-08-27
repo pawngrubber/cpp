@@ -1,4 +1,3 @@
-#include <iostream>
 #include <string>
 #include <vector>
 #include <set>
@@ -43,11 +42,4 @@ int count(std::string key){
         counts.push_back(candidate.val.size());
     }
     return *std::max_element(counts.begin(), counts.end());
-}
-
-int main() {
-    std::string key;
-    std::getline(std::cin, key);
-    std::cout << count(key) << "\n";
-    return 0;
 }
