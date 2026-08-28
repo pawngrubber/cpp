@@ -3,12 +3,13 @@
 #include <set>
 #include <algorithm>
 
+// Track state with the string
 struct Candidate {
     std::string val;
     bool end = false;
 };
 
-bool unique(std::string key) {
+bool unique(const std::string & key) { // Ampersand passes insteads of copies variable
     std::set<char> my_set;
     for (int i=0; i<key.size(); i++) {
         my_set.insert(key[i]);
@@ -19,10 +20,9 @@ bool unique(std::string key) {
 int count(std::string key){
 
     std::vector<Candidate> candidates = {};
-    for (int i=0, s=key.size(); i<s; i++) {
+    for (int i=0; i<(int)key.size(); i++) { // cast size_t to int
         std::string k = key.substr(i, 1);
-        for (int i=0; i<candidates.size(); i++) {
-            Candidate & candidate = candidates[i];
+        for (auto & candidate: candidates) {
             if (candidate.end) {
                 continue;
             }
